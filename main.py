@@ -103,8 +103,7 @@ def main():
                 #print("Merda.")
             jogos+=1
             apresentador.reiniciar()
-        print("Ganhei {0:.2f}% das vezes".format(100*(float(vitorias)/float(jogos))))
-        print(jogador.trocar,jogador.naoTrocar)
+    print("Ganhei {0:.4f}% das vezes".format(100*(float(vitorias)/float(jogos))))
     return 0
 #main
 
