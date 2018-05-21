@@ -13,7 +13,7 @@ class Apresentador():
     def __init__(self):
         self.portaCerta = randint(0,2)
         self.portas = [0,0,0]#0 para a porta que está fechada, 1 para a porta que está aberta
-
+                             #a door closed is coded as a 0, a open door is a 1.
     def reiniciar(self):
         self.portas = [0,0,0]
         self.portaCerta = randint(0,2)
@@ -56,6 +56,8 @@ class Agente():
         if(self.trocar > self.naoTrocar):
             self.trocarPorta(portas)
             self.troquei = 1
+        #If the gain hope of trading doors is bigger than not trading
+        #trade, otherwise, don't.
         #Se a esperança de ganho por trocar for maior que
         #não trocar, troque, se não, não faça nada.
 
@@ -89,10 +91,13 @@ def main():
     for i in range(100):
         jogador.randomizar()
         for i in range(10000):
-            #jogador escolhe aleatoriamente que porta ele quer.
+            #jogador escolheu a porta inicial aleatoriamente
+            #player randomly chose which door he wanted to start with
             apresentador.abrirPorta(jogador.escolha)
             #Apresentador abre uma porta e oferece a chance de
             #trocar de porta ao jogador
+            #Presenter opens a losing door(One with a goat) and gives the player
+            #a chance to choose another door
             jogador.escolherAcao(apresentador.portas)
             jogador.atualizarValores(apresentador.ganhou(jogador.escolha))
             if(apresentador.ganhou(jogador.escolha)):
