@@ -104,6 +104,8 @@ def main():
             jogos+=1
             apresentador.reiniciar()
     print("Ganhei {0:.4f}% das vezes".format(100*(float(vitorias)/float(jogos))))
+    print("Esperança de ganho se eu trocar de porta: {0:.4f}".format(jogador.trocar))
+    print("Esperança de ganho se eu não trocar de porta: {0:.4f}".format(jogador.naoTrocar))
     return 0
 #main
 
